@@ -148,7 +148,7 @@ async function gerarRoteiro(){const k=localStorage.zp_gemini;if(!k){alert('Salve
 const ideia=document.getElementById('pi').value.trim();if(!ideia)return alert('Descreva o produto primeiro');
 const out=document.getElementById('roteiro');out.textContent='Gerando roteiro...';
 const prompt=`Você é roteirista de vídeos curtos para TikTok Shop, nicho feminino, em português do Brasil. Formato: ${document.getElementById('pf').value}. Produto e ideia: ${ideia}. ${document.getElementById('pl').value?'Use como referência a estrutura deste vídeo (não copie): '+document.getElementById('pl').value+'.':''} Entregue: 1) Gancho forte nos 3 primeiros segundos; 2) Roteiro de 15 a 30 segundos com falas e cenas; 3) Chamada para ação; 4) Legenda curta; 5) 5 hashtags.`;
-try{const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+k,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})});
+try{const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key='+k,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}]})});
 const j=await r.json();if(j.error)throw new Error(j.error.message);
 roteiroAtual=j.candidates[0].content.parts.map(p=>p.text).join('');out.style.color='#fff';out.textContent=roteiroAtual}
 catch(e){out.textContent='Erro: '+e.message}}
