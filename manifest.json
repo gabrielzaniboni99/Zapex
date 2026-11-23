@@ -1,0 +1,10 @@
+manifest.json
+{
+  "name": "Z Apex",
+  "short_name": "Z Apex",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0b0b14",
+  "theme_color": "#0b0b14",
+  "icons": []
+}
