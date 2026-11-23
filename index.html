@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b14">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="estilo.css">
+<title>Z Apex</title>
+</head>
+<body>
+<section id="tela-login" class="cartao">
+  <h1>Z <span>Apex</span></h1>
+  <p class="sub">Seu estúdio de vídeos com IA</p>
+  <input id="usuario" placeholder="Usuário" autocomplete="username">
+  <input id="senha" type="password" placeholder="Senha" autocomplete="current-password">
+  <button id="btn-entrar">Entrar</button>
+  <p class="nota">Primeira vez? Escolha um usuário e senha e clique em Entrar para criar sua conta neste aparelho.</p>
+</section>
+
+<main id="tela-app" class="oculto">
+  <header>
+    <h1>Z <span>Apex</span></h1>
+    <button id="btn-sair" class="link">Sair</button>
+  </header>
+
+  <section class="cartao">
+    <h2>1. Envie o vídeo de referência</h2>
+    <input id="link-video" placeholder="Cole o link do vídeo (TikTok, Reels...)">
+    <p class="ou">ou</p>
+    <input id="arquivo-video" type="file" accept="video/*">
+    <h2>2. Dados do produto</h2>
+    <input id="produto" placeholder="Nome do produto">
+    <input id="personagem" placeholder="Personagem (ex: jovem, estilo casual, cabelo longo)">
+    <textarea id="notas" placeholder="O que chamou atenção no vídeo? (gancho, ritmo, tom)"></textarea>
+    <button id="btn-analisar">Analisar e criar roteiro</button>
+  </section>
+
+  <section id="resultado" class="cartao oculto">
+    <h2>Roteiro, gancho e legenda</h2>
+    <p class="nota">Nesta primeira versão o texto abaixo é um modelo. Na próxima etapa ligamos a uma IA para gerar de verdade.</p>
+    <pre id="saida"></pre>
+    <h2>Estimativa de custo por vídeo</h2>
+    <p class="nota">Valores de exemplo editáveis. Confira os preços atuais em cada serviço.</p>
+    <table id="tabela-custos"></table>
+    <button id="btn-salvar">Salvar esta versão</button>
+  </section>
+
+  <section class="cartao">
+    <h2>Versões salvas</h2>
+    <ul id="lista-versoes"></ul>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
